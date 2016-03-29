@@ -24,7 +24,7 @@ public class Stripe {
                 protected ResponseWrapper doInBackground(Void... params) {
                     try {
                         RequestOptions requestOptions = RequestOptions.builder()
-                                .setApiKey(publishableKey).build();
+                                .setApiKey(publishableKey).setStripeVersion("2014-05-19").build();
                         com.stripe.model.Token stripeToken = com.stripe.model.Token.create(
                                 hashMapFromCard(card), requestOptions);
                         com.stripe.model.Card stripeCard = stripeToken.getCard();
